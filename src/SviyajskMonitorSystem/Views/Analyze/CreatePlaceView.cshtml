@@ -1,0 +1,154 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+    <div>
+        <label>need point</label>
+        <input [(ngModel)]="place.needpoint" type="checkbox" />
+    </div>
+    <div *ngIf="place.needpoint" >
+        <h1>Unity Imitation</h1>
+        
+        <div class="form-group">
+            <h1>Posttion</h1>
+            <form #position="ngForm">
+                <input class="form-control" type="number" name="x" [(ngModel)]="place.pos.x" />
+                <input class="form-control" type="number" name="y" [(ngModel)]="place.pos.y" />
+                <input class="form-control" type="number" name="z" [(ngModel)]="place.pos.z" />
+            </form>
+        </div>
+        <div>
+            <h1>direction</h1>
+            <form #direction="ngForm">
+                <input class="form-control" type="number" name="x" [(ngModel)]="place.dir.x" />
+                <input class="form-control" type="number" name="y" [(ngModel)]="place.dir.y" />
+                <input class="form-control" type="number" name="z" [(ngModel)]="place.dir.z" />
+            </form>
+        </div>
+        
+    </div>
+    <br />
+    <div class="btn-group">
+        <button class="btn btn-default"  (click)="ChangeMethod(0)" >Новое место</button>
+        <button class="btn btn-default" (click)="ChangeMethod(1)">Существующее место</button>
+        <button class="btn btn-default" (click)="ChangeMethod(2)">Существующий образец</button>
+    </div>
+    <div [ngSwitch]="method" >
+        <template [ngSwitchCase]="0">
+            <div>
+                <div id="jstree">
+
+                </div>
+                <div>
+                    <div class="form-group">
+                    <md-checkbox>asd</md-checkbox>
+                        <label>Указывать геокоординаты?</label>
+                            <input [(ngModel)]="place.needcords" name="needcords" type="checkbox" />
+                    </div>
+                    <form *ngIf="place.needcords">
+
+
+                        <label>Широта</label>
+                        <input class="form-control" type="number" name="x" [(ngModel)]="place.geocords.x" />
+                        <label>Долгота</label>
+                        <input class="form-control" type="number" name="y" [(ngModel)]="place.geocords.y" />
+                        <label>Высота</label>
+                        <input class="form-control" type="number" name="z" [(ngModel)]="place.geocords.z" />
+
+                    </form>
+                </div>
+                <image (OnImagesSetted)="OnImageSended()" >
+
+                </image>
+                <form #Place="ngForm">
+
+                    <br />
+                    <div class="form-group">
+                        <label>Описание</label>
+                        <textarea class="form-control" [(ngModel)]="place.placedescription" name="description"></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Физическое изъятие?</label>
+                        <input [(ngModel)]="place.sample.physical" name="physical" class="form-control" type="checkbox" />
+                    </div>
+
+                    <div *ngIf="place.sample.physical">
+                        <div class="form-group">
+                            <label>Шифр</label>
+                            <input type="text" [(ngModel)]="place.sample.Shifr" name="shifr" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Дата изъятия</label>
+                            <input type="date" [(ngModel)]="place.sample.date" name="date" class="form-control" />
+                        </div>
+                        <div>
+                            <label>Исследователь</label>
+                            <select [(ngModel)]="place.sample.personid" name="person">
+                                <option *ngFor="let person of persons" value="{{person.id}}">{{person.surname}} {{person.name}}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Организация</label>
+                            <select [(ngModel)]="currentorgid" name="org" (change)="ChangeOrg()">
+                                <option *ngFor="let org of organizations" value="{{org.id}}">{{org.name}}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Место хранения</label>
+                            <select [(ngModel)]="place.sample.storageid" name="storage">
+                                <option *ngFor="let storage of storages" value="{{storage.id}}">{{storage.place}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </form>
+                <button (click)="SendPlace()" class="btn btn-default">Отправить</button>
+            </div>
+        </template>
+        <template [ngSwitchCase]="1">
+            <oldp (OnPlaceSetted)="OnPlaceSetted($event)"></oldp>
+            <form #nsample="ngForm" >
+                <div class="form-group">
+                    <label>Физическое изъятие?</label>
+                    <input [(ngModel)]="sample.physical" name="physical" class="form-control" type="checkbox" />
+                </div>
+
+                <div *ngIf="sample.physical">
+                    <div class="form-group">
+                        <label>Шифр</label>
+                        <input type="text" [(ngModel)]="sample.shifr" name="shifr" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Дата изъятия</label>
+                        <input type="date" [(ngModel)]="sample.date" name="date" class="form-control" />
+                    </div>
+                    <div>
+                        <label>Исследователь</label>
+                        <select [(ngModel)]="sample.personid" name="person">
+                            <option *ngFor="let person of persons" value="{{person.id}}">{{person.surname}} {{person.name}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Организация</label>
+                        <select [(ngModel)]="currentorgid" name="org" (change)="ChangeOrg()">
+                            <option *ngFor="let org of organizations" value="{{org.id}}">{{org.name}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Место хранения</label>
+                        <select [(ngModel)]="sample.storageid" name="storage">
+                            <option *ngFor="let storage of storages" value="{{storage.id}}">{{storage.place}}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-default" (click)="SetOldPlace()"  >Отправить</button>
+        </template>
+        <template [ngSwitchCase]="2" >
+            <olds (OnSampleSetted)="OnSampleSetted($event)" ></olds>
+        </template>
+    </div>
+</div>

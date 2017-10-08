@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<TreeType>
+
+<h2>Виды разбиения материальных объектов</h2>
+<a asp-action="CreateType" asp-controller="TreeTypes" >Создать</a>
+@foreach(var item in Model)
+{
+    <h4>@item.name</h4>
+    <table border="1">
+        <tr>
+            <th>Название</th>
+            <th>тип</th>
+            <th>Название справочника</th>
+        </tr>
+        @foreach(var attrkey in item.keys)
+        {
+            <tr>
+                <td>@attrkey.name</td>
+                <td>@LowLevelHelper.AttributeTypeToRussianString(attrkey.type)</td>
+                @if (attrkey.type == AttributeTypes.Choosable)
+                {
+                   <td>@attrkey.entitytype.Name</td>
+
+                }
+                else { <td>Нет</td>}
+            </tr>
+
+        }
+    </table>
+    
+}
+

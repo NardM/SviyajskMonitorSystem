@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model TreeType
+
+
+
+<h3>Добавить атрибуты</h3>
+<div id="AttributeList">
+
+</div>
+@Html.Partial("CreateAttributeKey")
+<h3>Зарегистрировать тип</h3>
+<form>
+    <label asp-for="name">Название типа</label>
+    <input id="TypeName" asp-for="name" />
+    <input onclick="RegisterType()" type="button" value="Зарегистрировать тип" />
+</form>
+
+
+@section scripts{
+    <script src="~/js/jquery-2.2.0.min.js"></script>
+    <script src="~/js/jquery.signalr-2.2.0.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="~/js/TreeTypesScript.js"></script>
+}

@@ -5,8 +5,9 @@
 }
 <div>
     <div>
-        <label>need point</label>
-        <input [(ngModel)]="place.needpoint" type="checkbox" />
+        <md-checkbox [(ngModel)]="place.needpoint">
+        need point
+        </md-checkbox>
     </div>
     <div *ngIf="place.needpoint" >
         <h1>Unity Imitation</h1>
@@ -14,17 +15,29 @@
         <div class="form-group">
             <h1>Posttion</h1>
             <form #position="ngForm">
-                <input class="form-control" type="number" name="x" [(ngModel)]="place.pos.x" />
-                <input class="form-control" type="number" name="y" [(ngModel)]="place.pos.y" />
-                <input class="form-control" type="number" name="z" [(ngModel)]="place.pos.z" />
+                 <md-form-field>
+                    <input mdInput placeholder="x" [(ngModel)]="place.pos.x">
+                  </md-form-field>
+                  <md-form-field>
+                    <input mdInput placeholder="y" [(ngModel)]="place.pos.y">
+                  </md-form-field>
+                  <md-form-field>
+                    <input mdInput placeholder="z" [(ngModel)]="place.pos.z">
+                  </md-form-field>
             </form>
         </div>
         <div>
             <h1>direction</h1>
             <form #direction="ngForm">
-                <input class="form-control" type="number" name="x" [(ngModel)]="place.dir.x" />
-                <input class="form-control" type="number" name="y" [(ngModel)]="place.dir.y" />
-                <input class="form-control" type="number" name="z" [(ngModel)]="place.dir.z" />
+                <md-input-container>
+                  <input mdInput placeholder="x" [(ngModel)]="place.dir.x">
+                </md-input-container>
+                <md-input-container>
+                  <input mdInput placeholder="y" [(ngModel)]="place.dir.y">
+                </md-input-container>
+               <md-input-container>
+                  <input mdInput placeholder="z" [(ngModel)]="place.dir.z">
+                </md-input-container>
             </form>
         </div>
         
@@ -48,7 +61,9 @@
                     </div>
                     <form *ngIf="place.needcords">
 
-
+                    <md-form-field floatPlaceholder="never">
+                         <input mdInput type="number" placeholder="Широта" [(ngModel)]="place.geocords.x">
+                     </md-form-field>
                         <label>Широта</label>
                         <input class="form-control" type="number" name="x" [(ngModel)]="place.geocords.x" />
                         <label>Долгота</label>

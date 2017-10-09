@@ -19,17 +19,23 @@
             <md-list>
                 <md-list-item>
                  <md-form-field>
-                    <input mdInput placeholder="x" [(ngModel)]="place.pos.x">
+                    <input mdInput placeholder="x"
+                    name="pos-x"
+                    [(ngModel)]="place.pos.x">
                   </md-form-field>
                 </md-list-item>
                 <md-list-item>
                   <md-form-field>
-                    <input mdInput placeholder="y" [(ngModel)]="place.pos.y">
+                    <input mdInput placeholder="y"
+                    name="pos-y"
+                    [(ngModel)]="place.pos.y">
                   </md-form-field>
                 </md-list-item>
                 <md-list-item>
                   <md-form-field>
-                    <input mdInput placeholder="z" [(ngModel)]="place.pos.z">
+                    <input mdInput placeholder="z"
+                    name="pos-z"
+                    [(ngModel)]="place.pos.z">
                   </md-form-field>
                 </md-list-item>
             </md-list>
@@ -41,17 +47,26 @@
             <md-list>
                <md-list-item>
                 <md-input-container>
-                  <input mdInput placeholder="x" [(ngModel)]="place.dir.x">
+                  <input mdInput
+                  placeholder="x"
+                  name="dir-x"
+                  [(ngModel)]="place.dir.x">
                 </md-input-container>
                </md-list-item>
                <md-list-item>
                 <md-input-container>
-                  <input mdInput placeholder="y" [(ngModel)]="place.dir.y">
+                  <input mdInput
+                  placeholder="y"
+                  [(ngModel)]="place.dir.y"
+                  name="dir-y">
                 </md-input-container>
                 </md-list-item>
                 <md-list-item>
                <md-input-container>
-                  <input mdInput placeholder="z" [(ngModel)]="place.dir.z">
+                  <input mdInput
+                  placeholder="z"
+                  [(ngModel)]="place.dir.z"
+                  name="dir-z">
                 </md-input-container>
                 </md-list-item>
             </md-list>
@@ -75,25 +90,39 @@
                 <div class="form-group">
                 </div>
                     <div class="form-group">
-                      <md-checkbox [(ngModel)]="place.needcords"
-                                    color="primary">
+                      <md-checkbox
+                      [(ngModel)]="place.needcords"
+                      name="needcords"
+                      color="primary">
                       Указывать геокоординаты?</md-checkbox>
                     </div>
                     <form *ngIf="place.needcords">
                       <md-list>
                         <md-list-item>
                             <md-form-field>
-                                <input mdInput type="number" placeholder="Широта" [(ngModel)]="place.geocords.x">
+                                <input mdInput
+                                type="number"
+                                placeholder="Широта"
+                                name="geocords-x"
+                                [(ngModel)]="place.geocords.x">
                             </md-form-field>
                         </md-list-item>
                         <md-list-item>
                             <md-form-field>
-                                 <input mdInput type="number" placeholder="Долгота" [(ngModel)]="place.geocords.y">
+                                 <input mdInput
+                                 type="number"
+                                 placeholder="Долгота"
+                                 name="geocords-y"
+                                 [(ngModel)]="place.geocords.y">
                              </md-form-field>
                         </md-list-item>
                         <md-list-item>
                             <md-form-field>
-                                <input mdInput type="number" placeholder="Высота" [(ngModel)]="place.geocords.z">
+                                <input mdInput
+                                type="number"
+                                placeholder="Высота"
+                                name="geocords-z"
+                                [(ngModel)]="place.geocords.z">
                             </md-form-field>
                         </md-list-item>
                        </md-list>
@@ -110,12 +139,14 @@
                     <md-form-field>
                        <textarea mdInput
                          placeholder="Описание"
-                         [(ngModel)]="place.placedescription"
-                         name="description"></textarea>
+                         name="placedescription"
+                         [(ngModel)]="place.placedescription">
+                         </textarea>
                     </md-form-field>
                     </div>
                     <div class="form-group">
                     <md-checkbox [(ngModel)]="place.sample.physical"
+                                  name="sample-physical"
                                  color="primary">
                                  Физическое изъятие?</md-checkbox>
                     </div>

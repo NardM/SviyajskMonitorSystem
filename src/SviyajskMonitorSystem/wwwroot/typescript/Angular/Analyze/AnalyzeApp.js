@@ -11,6 +11,7 @@ const BaseComponent_1 = require("./BaseComponent");
 const platform_browser_1 = require("@angular/platform-browser");
 const forms_1 = require("@angular/forms");
 const material = require("@angular/material");
+const animation = require("@angular/platform-browser/animations");
 const PlaceComponent_1 = require("./PlaceComponent");
 const http_1 = require("@angular/http");
 const AnalyzeComponent_1 = require("./AnalyzeComponent");
@@ -37,6 +38,7 @@ let AnalyzeAppModule = class AnalyzeAppModule {
 AnalyzeAppModule = __decorate([
     core_1.NgModule({
         imports: [
+            animation.BrowserAnimationsModule,
             material.MdCheckboxModule,
             material.MdAutocompleteModule,
             material.MatButtonModule,

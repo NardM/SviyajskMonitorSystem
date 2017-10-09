@@ -5,7 +5,8 @@
 }
 <div>
     <div>
-        <md-checkbox [(ngModel)]="place.needpoint">
+        <md-checkbox color="primary"
+                     [(ngModel)]="place.needpoint">
         need point
         </md-checkbox>
     </div>
@@ -55,21 +56,24 @@
 
                 </div>
                 <div>
+                <div class="form-group">
+                </div>
                     <div class="form-group">
-                      <md-checkbox [(ngModel)]="place.needcords">
+                      <md-checkbox [(ngModel)]="place.needcords"
+                                    color="primary">
                       Указывать геокоординаты?</md-checkbox>
                     </div>
                     <form *ngIf="place.needcords">
 
-                    <md-form-field floatPlaceholder="never">
+                    <md-form-field>
                          <input mdInput type="number" placeholder="Широта" [(ngModel)]="place.geocords.x">
                      </md-form-field>
-                        <label>Широта</label>
-                        <input class="form-control" type="number" name="x" [(ngModel)]="place.geocords.x" />
-                        <label>Долгота</label>
-                        <input class="form-control" type="number" name="y" [(ngModel)]="place.geocords.y" />
-                        <label>Высота</label>
-                        <input class="form-control" type="number" name="z" [(ngModel)]="place.geocords.z" />
+                    <md-form-field>
+                         <input mdInput type="number" placeholder="Долгота" [(ngModel)]="place.geocords.y">
+                     </md-form-field>
+                         <md-form-field>
+                         <input mdInput type="number" placeholder="Высота" [(ngModel)]="place.geocords.z">
+                     </md-form-field>
 
                     </form>
                 </div>
@@ -80,13 +84,17 @@
 
                     <br />
                     <div class="form-group">
-                        <label>Описание</label>
-                        <textarea class="form-control" [(ngModel)]="place.placedescription" name="description"></textarea>
-
+                    <md-form-field>
+                       <textarea mdInput
+                         placeholder="Описание"
+                         [(ngModel)]="place.placedescription"
+                         name="description"></textarea>
+                    </md-form-field>
                     </div>
                     <div class="form-group">
-                        <label>Физическое изъятие?</label>
-                        <input [(ngModel)]="place.sample.physical" name="physical" class="form-control" type="checkbox" />
+                    <md-checkbox [(ngModel)]="place.sample.physical"
+                                 color="primary">
+                                 Физическое изъятие?</md-checkbox>
                     </div>
 
                     <div *ngIf="place.sample.physical">

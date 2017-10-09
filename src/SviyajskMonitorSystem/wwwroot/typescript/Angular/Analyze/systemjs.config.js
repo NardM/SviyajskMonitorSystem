@@ -36,7 +36,6 @@
             '@angular/cdk/table': 'npm:@angular/cdk/bundles/cdk-table.umd.js',
 
 
-
             // other libraries
             'ng2-signalr': 'npm:ng2-signalr/bundles/ng2-signalr.umd.js',
             'rxjs': 'npm:rxjs',

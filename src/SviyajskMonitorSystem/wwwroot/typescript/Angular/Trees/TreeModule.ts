@@ -40,7 +40,7 @@ import {MdAutocompleteModule,
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    MdStepperModule,} from "@angular/material";
+    MdStepperModule} from "@angular/material";
 
 
 export function createConfig(): SignalRConfiguration {

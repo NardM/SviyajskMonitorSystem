@@ -43,9 +43,8 @@
                 </div>
                 <div>
                     <div class="form-group">
-                    <md-checkbox>asd</md-checkbox>
-                        <label>Указывать геокоординаты?</label>
-                            <input [(ngModel)]="place.needcords" name="needcords" type="checkbox" />
+                      <md-checkbox [(ngModel)]="place.needcords">
+                      Указывать геокоординаты?</md-checkbox>
                     </div>
                     <form *ngIf="place.needcords">
 

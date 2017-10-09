@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MdCheckboxModule} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
 
 export function createConfig(): SignalRConfiguration {
     const c = new SignalRConfiguration();
@@ -37,6 +38,7 @@ export function createConfig(): SignalRConfiguration {
         MdCheckboxModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        CdkTableModule,
         SignalRModule.forRoot(createConfig)],
     providers: [
         ConnectionService

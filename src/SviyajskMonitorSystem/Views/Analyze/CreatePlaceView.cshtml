@@ -84,7 +84,6 @@
         <template [ngSwitchCase]="0">
             <div>
                 <div id="jstree">
-
                 </div>
                 <div>
                 <div class="form-group">
@@ -181,7 +180,9 @@
                     </div>
 
                 </form>
-                <button (click)="SendPlace()" class="btn btn-default">Отправить</button>
+                <button (click)="SendPlace()"
+                color="primary"
+                md-raised-button>Отправить</button>
             </div>
         </template>
         <template [ngSwitchCase]="1">

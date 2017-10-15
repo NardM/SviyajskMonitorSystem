@@ -10,8 +10,8 @@
         <ng-content></ng-content>
     </div>
     <div *ngIf="pagescount>1">
-        <button (click)="Back()"  class="btn btn-default">Назад</button>
-        <button class="btn btn-default" *ngFor="let n of buttons let i=index" (click)="ChangePage(n)" >{{n}}</button>
-        <button (click)="Next()"  class="btn btn-default" >Вперед</button>
+        <button (click)="Back()"  md-raised-button>Назад</button>
+        <button md-raised-button *ngFor="let n of buttons let i=index" (click)="ChangePage(n)" >{{n}}</button>
+        <button (click)="Next()"  md-raised-button>Вперед</button>
     </div>
 </div>

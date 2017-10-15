@@ -55,7 +55,7 @@ export function createConfig(): SignalRConfiguration {
 
 
 @NgModule({
-    imports: [MaterialModule,
+    imports: [
         BrowserAnimationsModule,
         BrowserModule,
         FormsModule,
@@ -89,7 +89,7 @@ export function createConfig(): SignalRConfiguration {
         MdTabsModule,
         MdToolbarModule,
         MdTooltipModule,
-        MdStepperModule,,
+        MdStepperModule,
         HttpModule,
         ReactiveFormsModule,
         SignalRModule.forRoot(createConfig)],

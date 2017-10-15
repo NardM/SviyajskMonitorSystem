@@ -9,8 +9,13 @@
 
 <form>
     <div class="form-group">
-        <label asp-for="name">Имя атрибута</label>
-        <input id="keyname" asp-for="name" />
+        <md-form-field>
+        <input
+        id="keyname"
+        mdInput
+        placeholder="Имя атрибута"
+        asp-for="name" />
+        </md-form-field>
     </div>
 
     <select id="attrtype" name="attrtype" onchange="TypeChanged()">

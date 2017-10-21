@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+<div class="main-content" style="    text-align: -webkit-center;">
 
 
 <form asp-action="Create">
@@ -11,32 +12,35 @@
         <h4>Химический элемент</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="fullname" class="col-md-2 control-label">Полное имя</label>
-            <div class="col-md-10">
-                <input asp-for="fullname" class="form-control" />
-                <span asp-validation-for="fullname" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="shortname" class="col-md-2 control-label">Короткое имя</label>
-            <div class="col-md-10">
-                <input asp-for="shortname" class="form-control" />
-                <span asp-validation-for="shortname" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Создать" class="btn btn-default" />
+
+         <div class="">
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <input asp-for="fullname" class="mdl-textfield__input" asp-for="Name" type="text" >
+             <label asp-validation-for="fullname" class="mdl-textfield__label" for="sample3">Полное имя</label>
+           </div>
+         </div>
+
+         <div class="">
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <input asp-for="shortname" class="mdl-textfield__input" asp-for="Name" type="text" >
+             <label asp-validation-for="shortname" class="mdl-textfield__label" for="sample3">Короткое имя</label>
+           </div>
+         </div>
+
+
+        <div class="">
+            <div class="">
+                <input type="submit" value="Создать" style="background:#3F51B5" class="btn btn-info" />
             </div>
         </div>
     </div>
 </form>
 
-<div>
-    <a asp-action="Index">Назад</a>
+<div style="    margin-top: 20px;">
+    <a asp-action="Index" style="color:#3F51B5;">Назад</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+</div>

@@ -6,35 +6,47 @@
 
 
 
+<div class="main-content" style="    text-align: -webkit-center;">
 <p>
-    <a asp-action="Create">Добавить</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Имя
-            </th>
-            <th>
-                Фамилия
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
+ <div class="button-container" >
+    <a asp-action="Create"
+    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    <span>Добавить</span>
+    </a>
+  </div>
 
-                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
-            </td>
-        </tr>
-}
-    </tbody>
+
+</p>
+
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+     <tr>
+                <th>
+                    Имя
+                </th>
+                <th>
+                    Фамилия
+                </th>
+                <th></th>
+            </tr>
+  </thead>
+     <tbody>
+  @foreach (var item in Model) {
+          <tr>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Name)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Surname)
+              </td>
+              <td>
+
+                  <a asp-action="Delete" style="color:#3F51B5" asp-route-id="@item.Id">Удалить</a>
+              </td>
+          </tr>
+  }
+      </tbody>
 </table>
+</div>
+

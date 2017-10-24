@@ -5,6 +5,7 @@
 }
 
 
+<div class="main-content" style="    text-align: -webkit-center;">
 
 <p>
     <a asp-action="Create"
@@ -32,9 +33,10 @@
                 @Html.DisplayFor(modelItem => item.shortname)
             </td>
             <td>
-                <a asp-action="Delete" asp-route-id="@item.id">Удалить</a>
+                <a asp-action="Delete" style="color:#3F51B5;" asp-route-id="@item.id">Удалить</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

@@ -4,13 +4,13 @@
 @{
 }
 @model List<TreeType>
-
+<div class="main-content" style="    text-align: -webkit-center;">
 <h2>Виды разбиения материальных объектов</h2>
-<a asp-action="CreateType" asp-controller="TreeTypes" >Создать</a>
+<a asp-action="CreateType" asp-controller="TreeTypes" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Создать</a>
 @foreach(var item in Model)
 {
     <h4>@item.name</h4>
-    <table border="1">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <tr>
             <th>Название</th>
             <th>тип</th>
@@ -34,3 +34,4 @@
     
 }
 
+</div>

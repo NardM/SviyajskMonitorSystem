@@ -11,8 +11,11 @@
     <div class="dropdown" >
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  >{{currenttype}}<i class="glyphicon glyphicon-menu-down" ></i></button>
         <ul class="dropdown-menu" >
-            <li  *ngFor="let t of types let i=index"><button class="btn btn-link"  (click)="ChangeType(i)" >{{t}}</button> </li>
+            <li  *ngFor="let t of types let i=index">
+            <button class="btn btn-link"  (click)="ChangeType(i)" >{{t}}</button>
+            </li>
         </ul>
     </div>
-    <button (click)="InitRedactor()" >Создать дерево</button>
+    <button color="primary"
+    md-raised-button (click)="InitRedactor()" >Создать дерево</button>
 </div>

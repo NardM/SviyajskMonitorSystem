@@ -13,18 +13,19 @@
         <input asp-for="Name" class="form-control" type="text" id="elname" name="elname" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-    <button type="submit" style="background:#3F51B5" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" >Добавить</button>
+    <button style="    width: 110px;" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" >Добавить</button>
 </form>
 <form id="DeleteElementform" asp-controller="Elements" asp-action="DelelteEl">
     <input type="hidden" id="elid" name="elid" value="-1" />
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit">Удалить</button>
+    <button style="    width: 110px;
+                       margin: 10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit">Удалить</button>
 </form>
 </div>
 
 <div id="ElTree">
 
 </div>
-<button class="mdl-button mdl-js-button mdl-button--raised" onclick="deselect()">Отменить выделение</button>
+<button style="margin: 10px;" class="mdl-button mdl-js-button mdl-button--raised" onclick="deselect()">Отменить выделение</button>
 </div>
 @section scripts{
     <script src="~/js/ElementTreeJS.js"></script>

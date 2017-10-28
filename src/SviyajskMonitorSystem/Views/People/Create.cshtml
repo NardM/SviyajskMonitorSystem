@@ -13,14 +13,14 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" asp-for="Name" type="text" required="required" id="sample3">
+            <input class="mdl-textfield__input" asp-for="Name" type="text" id="sample3">
             <label asp-validation-for="Name" class="mdl-textfield__label" for="sample3">Имя</label>
           </div>
         </div>
 
         <div class="">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input asp-for="Surname" class="mdl-textfield__input" asp-for="Name" type="text" required="required" id="sample3">
+                <input asp-for="Surname" class="mdl-textfield__input" asp-for="Name" type="text"  id="sample3">
                 <label asp-validation-for="Surname" asp-validation-for="Name" class="mdl-textfield__label" for="sample3">Фамилия</label>
           </div>
         </div>
@@ -29,14 +29,16 @@
 
         <div class="">
             <div class="">
-                <input style="background:#3F51B5" class="btn btn-info" type="submit" value="Создать"   />
+                <button
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                type="submit">Создать</button>
             </div>
         </div>
 
     </div>
 </form>
 
-<div style="    margin-top: 20px;">
+<div style="    margin-top: 10px;">
     <a asp-action="Index" style="color:#3F51B5">Назад</a>
 </div>
 

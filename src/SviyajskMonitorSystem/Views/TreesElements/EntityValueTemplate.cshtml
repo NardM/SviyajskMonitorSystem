@@ -7,7 +7,9 @@
 
 <div class="btn-group" >
     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" >{{currentvalue.value}}</a>
+
     <ul class="dropdown-menu" >
         <li *ngFor="let v of values"><a href="#" (click)="ChangeValue(v.id)" >{{v.value}}</a></li>
     </ul>
+
 </div>

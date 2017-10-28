@@ -5,7 +5,7 @@
 }
 
 
-<div>
+<div >
     <div id="treelements" >
 
     </div>
@@ -13,8 +13,13 @@
     <div >
         <form [formGroup]="ElementForm"  >
             <div>
-                <label>Название элемента</label>
-                <input type="text"  formControlName="identifier"  />
+            <md-form-field >
+                                              <input mdInput
+                                              type="text"
+                                              formControlName="identifier"
+                                              placeholder="Название элемента"
+                                              />
+                                             </md-form-field>
                 <hr />
             </div>
             <h3>Свойства:</h3>
@@ -46,7 +51,9 @@
                     </ng-template>
                 </div>
             </div>
-            <button class="btn btn-default" (click)="CreateTreeElement()" >Создать элемент</button>
+             <button (click)="CreateTreeElement()"
+                                      color="primary"
+                                      md-raised-button>Создать элемент</button>
         </form>
     </div>
     <image *ngIf="hasimage"  (OnImagesSetted)="setImages($event)" >
